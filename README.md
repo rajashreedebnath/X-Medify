@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🏥 XMedify - React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive, React-based web application that allows users to search for medical centers across the United States by **state** and **city**, view available listings, and book appointments. The application provides seamless user experience with persistent booking data using `localStorage`.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### ✅ Landing Page
+- Navigation bar with links to:
+  - Find Doctors
+  - Hospitals
+  - Medicines
+- Search bar to select **State** and **City** (via dropdowns populated from API)
+- Search button to navigate to search results
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✅ Search Results Page
+- Displays list of available medical centers
+- Each medical center card includes:
+  - Hospital Name
+  - Address
+  - City, State, ZIP Code
+  - Overall Rating
+  - Button: **"Book FREE Center Visit"**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ✅ Booking Interface
+- Allows booking of appointment:
+  - Select date within a week from current date
+  - Choose from time slots (Morning, Afternoon, Evening)
+- Requires user to enter email to confirm booking
+- Data stored in `localStorage` using key: **`bookings`**
 
-### `npm test`
+### ✅ My Bookings Page
+- Displays all bookings made by the user
+- Each booking shows:
+  - Hospital name
+  - Appointment date and time
+  - Email used
+- Accessible at route: `/my-bookings`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ✅ Other Highlights
+- Responsive UI matching Figma design
+- Carousel components powered by `Swiper` library
+- Clean and modular React component structure
+- Accessible dropdowns and buttons for test automation
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 API Endpoints
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Get All States:**
+GET https://meddata-backend.onrender.com/states
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+markdown
+Copy code
 
-### `npm run eject`
+- **Get Cities of a State:**
+GET https://meddata-backend.onrender.com/cities/:state
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+markdown
+Copy code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Get Medical Centers:**
+GET https://meddata-backend.onrender.com/data?state=<state>&city=<city>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React 18**
+- **Tailwind CSS** for styling
+- **React Router DOM** for routing
+- **SwiperJS** for carousels
+- **localStorage** for data persistence
+- **Axios** for API calls
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🧩 Figma Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project adheres to strict design requirements provided in the Figma file.  
+🔗 **Figma Link**: https://www.figma.com/design/BLZw4DOia4hXyqt8X1Yuyl/Desktop-Designs---Healthcare-Consultation--Community-?node-id=0-1&p=f&t=IzoG5Qp2zYxQPzdB-0
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📋 Development Setup
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/rajashreedebnath/XMedify.git 
+   cd XMedify
+   ```
